@@ -118,7 +118,11 @@ def main():
     for file in metadata_files:
         virt_experiment = artificial_data()
         para = virt_experiment.load_parameter(file)
-        mass_time = virt_experiment.f_diff_plane_sheet_const(virt_experiment.diff_coef, virt_experiment.L, virt_experiment.C_L, virt_experiment.C_R, virt_experiment.C_0, virt_experiment.nt, virt_experiment.dt, virt_experiment.n, virt_experiment.sigma)
+        mass_time = virt_experiment.f_diff_plane_sheet_const(virt_experiment.diff_coef, virt_experiment.L, 
+                                                             virt_experiment.C_L, virt_experiment.C_R, 
+                                                             virt_experiment.C_0, virt_experiment.nt, 
+                                                             virt_experiment.dt, virt_experiment.n, 
+                                                             virt_experiment.sigma)
         np.savetxt(Path(str(file).replace('meta.yaml', 'data.csv')), mass_time, delimiter =", ", fmt ='% s')
         plt.plot(mass_time)
         plt.savefig(Path(str(file).replace('meta.yaml', 'data.png')))

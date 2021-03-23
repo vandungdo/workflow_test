@@ -22,5 +22,22 @@ def task_generate_artifical_data():
         "verbosity": 2,  # show stdout
         #"setup": ['tbd'],
         "clean": [clean_targets]
+    }
 
+def task_diffusion_model():
+    """
+    Simulation of diffusion.
+    """
+    script = Path(__file__).parents[0] / 'diffusion_model.py'
+    
+    modeldata_files = Path(__file__).parent.glob('*_model.yaml')
+    model_files = Path(__file__).parent.glob('*_model.csv')
+
+    return {
+        'actions': [f'{PYTHON_EXE} {script}'],
+        'file_dep': [script, *modeldata_files],
+        "targets": [*model_files],
+        "verbosity": 2,  # show stdout
+        #"setup": ['tbd'],
+        "clean": [clean_targets]
     }

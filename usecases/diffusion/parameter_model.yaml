@@ -1,0 +1,25 @@
+meshgrid:
+    xInterval: [0, 2]
+    yInterval: [0, 1]
+    nx: 30
+    ny: 30
+    elementDegree: 1
+    tol: 1.0e-14
+
+diffusionProblem: 
+    u0: 
+        constant: 0.0
+        expression: false
+        degree: 2
+    uD: 
+        constant: 1.0
+        expression: false
+        timeDependent: false
+        pointwise: [[0,0.2], [0, 0.8], [1, 0.5]]
+        degree: 2
+    uN: 0.0
+    diffusionCoeff: 1.0
+
+timespace:
+    dt: 0.01
+    nt: 50
