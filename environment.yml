@@ -1,9 +1,8 @@
-name: null                          # Our env was made with --prefix
 channels:
-  - conda-forge                     # third party stuff
+  - conda-forge                     
   - defaults
 dependencies:
-  - python=3.7
+#  - python=3.7
   - pip
   - matplotlib
   - pymc3=3.9.3
@@ -11,9 +10,10 @@ dependencies:
   - pyyaml
   - mkl
   - mkl-service
-  - flake8
-  - sphinx
-  - sphinx_rtd_theme
+  - pytest
+#  - flake8
+#  - sphinx
+#  - sphinx_rtd_theme
   - conda-ecosystem-user-package-isolation
   
   

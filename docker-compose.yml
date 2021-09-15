@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  prod:
+    build:
+      context: .
+      target: production
+      args:
+        HTTP_PROXY: ${HTTP_PROXY}
+        HTTPS_PROXY: ${HTTPS_PROXY}
+
+    image: "bam-model-calibration-prod"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
