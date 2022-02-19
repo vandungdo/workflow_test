@@ -1,4 +1,5 @@
 #!/usr/bin/env cwl-runner
+# view the workflow with https://view.commonwl.org/workflows
 
 cwlVersion: v1.0
 class: Workflow
